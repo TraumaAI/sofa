@@ -75,7 +75,10 @@ shinyUI(fluidPage(
       hr(),
       h4("SOFA Score: "),
       h4(uiOutput("sofa_value")),
-      hr()
+      hr(),
+      h4("General Interpretation of SOFA Score:"),
+      a = uiOutput("sofa_value"),
+      p(as.integer(a))
       
     )
   )
