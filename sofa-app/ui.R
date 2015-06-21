@@ -77,9 +77,35 @@ shinyUI(fluidPage(
       h4(uiOutput("sofa_value")),
       hr(),
       h4("General Interpretation of SOFA Score:"),
-      a = uiOutput("sofa_value"),
-      p(as.integer(a))
-      
+      p("Each organ is graded from 0 (normal) to 4 (the most abnormal), providing a daily score of 0 to 24 points. Sequential assessment of organ dysfunction during the first few days of ICU admission is a good indicator of prognosis. Both the mean and highest SOFA scores are particularly useful predictors of outcome. Independent of the initial score, an increase in SOFA score during the first 48 hours in the ICU predicts a mortality rate of at least 50%"),
+      hr(),
+      fluidRow(column(3, h5("Maximum", br("SOFA Score")) ), 
+               column(3, h5("Hospital", br("Mortality")))),
+      fluidRow(column(3, "0 - 6" ), 
+               column(3, "< 10%")),
+      fluidRow(column(3, "7 - 9" ), 
+               column(3, "15% - 20%")),
+      fluidRow(column(3, "10 - 12" ), 
+               column(3, "40% - 60%")),
+      fluidRow(column(3, "13 - 14" ), 
+               column(3, "50% - 60%")),
+      fluidRow(column(3, "15" ), 
+               column(3, "> 80%")),
+      fluidRow(column(3, "> 15" ), 
+               column(3, "> 90%")),
+      fluidRow(column(3, h5("Score Trend", br("Initial 48 hrs"))), 
+               column(3, h5("Hospital", br("Mortality")))),
+      fluidRow(column(3, "Increasing" ), 
+               column(3, "> 50%")),
+      fluidRow(column(3, "Unchanged" ), 
+               column(3, "27% - 35%")),
+      fluidRow(column(3, "Deacreasing" ), 
+               column(3, "< 27%")),
+      hr(),
+      h5("References"),
+      p("Vincent JL, de Mendonça A, Cantraine F, et al. Use of the SOFA score to assess the incidence of organ dysfunction/failure in intensive care units: results of a multicenter, prospective study. Working group on \"sepsis-related problems\" of the European Society of Intensive Care Medicine. Crit Care Med. 1998;26(11):1793-800."),
+      p("Ferreira FL, Bota DP, Bross A, et al. Serial evaluation of the SOFA score to predict outcome in critically ill patients. JAMA. 2001;286(14):1754-8."),
+      p("Clinical Calculators. http://clincalc.com/IcuMortality/SOFA.aspx")
     )
   )
 ))
